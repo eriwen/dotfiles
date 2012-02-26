@@ -13,7 +13,7 @@ alias c='cd'
 alias e='ps -ef | grep'
 alias f='find . \! -path "*.git*"'
 alias h='history'
-alias l='ls --color=auto -F'
+alias l='tree --dirsfirst -ChFupDaLg 1'
 alias p='pushd'
 alias o='popd'
 alias ql='qlmanage -p 2>/dev/null'
@@ -42,9 +42,6 @@ alias flush="dscacheutil -flushcache"
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-
-# OS X has no `md5sum`, so use `md5` as a fallback
-type -t md5sum > /dev/null || alias md5sum="md5"
 
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
