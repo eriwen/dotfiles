@@ -51,4 +51,9 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 	alias "$method"="lwp-request -m '$method'"
 done
 
+# Empty trash
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+
+# Mute and unmute
+alias mute="osascript -e 'set volume with output muted'"
+alias unmute="osascript -e 'set volume with output unmuted'"
