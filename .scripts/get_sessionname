@@ -1,0 +1,2 @@
+#!/bin/sh
+screen -ls | grep $PPID | awk '{print $1}' | cut -f2 -d'.'

@@ -1,0 +1,26 @@
+# Link first arg and move to directory given as second arg
+function lmv() { 
+    [ -e $1 -a -e $2 ] && mv $1 $2 && ln -s $2/$(basename $1) $(dirname $1)
+}
+
+# Create a new directory and enter it
+function md() {
+    mkdir -p "$@" && cd "$@"
+}
+
+# Preview
+function pman() {
+    man -t "${1}" | open -f -a /Applications/Preview.app
+}
+
+# Quit app the mac way
+function quit() {
+    for app in $*; do
+        osascript -e 'quit app "'$app'"'
+    done
+}
+
+# Better man
+function man() {
+    /usr/bin/man $@ || (help $@ 2> /dev/null && help $@ | less)
+}

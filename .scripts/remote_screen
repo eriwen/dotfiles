@@ -1,0 +1,8 @@
+orig=`/usr/X11R6/bin/xprop -id $WINDOWID | perl -nle 'print $1 if /^WM_NAME.+= "(.*)"$/'`
+if [ -z $orig ];
+then
+    orig=`hostname`
+fi
+echo -e "\033]2;$1\007"
+ssh -t $1 screen -S main -xRR -p $2 -q
+echo -e "\033]2;$orig\007"

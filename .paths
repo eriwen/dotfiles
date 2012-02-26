@@ -1,0 +1,7 @@
+export JAVA_HOME=/Library/Java/Home
+export JAVAFX_HOME=/Applications/NetBeans/NetBeans\ 6.9.1.app/Contents/Resources/NetBeans/javafx2/javafx-sdk
+export GRADLE_HOME=/usr/local/share/gradle
+export GRAILS_HOME=/usr/local/share/grails
+export GRIFFON_HOME=/usr/local/share/griffon
+export NODE_PATH=/usr/local/lib/node_modules
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:.:${JAVA_HOME}/bin:${GRADLE_HOME}/bin:${JAVAFX_HOME}/bin:${GRIFFON_HOME}/bin:${GRIFFON_HOME}/ant/bin:${NODEJS_HOME}/bin:/home/eric/scripts

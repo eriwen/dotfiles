@@ -1,0 +1,35 @@
+"\eOA": history-search-backward
+"\e[A": history-search-backward
+"\eOB": history-search-forward
+"\e[B": history-search-forward
+"\eOC": forward-char
+"\e[C": forward-char
+"\eOD": backward-char
+"\e[D": backward-char
+# Use Alt/Meta + Delete to delete the preceding word
+"\e[3;3~": kill-word
+
+# Make Tab autocomplete regardless of filename case
+set completion-ignore-case on
+
+# Do not autocomplete hidden files unless the pattern explicitly begins with a dot
+set match-hidden-files off
+
+# Append a slash when autocompleting symbolic links to directories
+set mark-symlinked-directories on
+
+# Show all autocomplete results at once
+set page-completions off
+
+# Immediately show all possible completions
+set show-all-if-ambiguous on
+
+# If there are more than 200 possible completions for a word, ask to show them all
+set completion-query-items 200
+
+# Show extra file information when completing, like `ls -F` does
+set visible-stats on
+
+set skip-completed-text on
+
+

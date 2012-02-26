@@ -1,0 +1,34 @@
+[alias]
+	br = branch
+	c = commit
+	ci = commit
+	co = checkout
+	lg = log --pretty=oneline --abbrev-commit --graph --decorate --all
+	pur = pull --rebase
+	ri = rebase --interactive --autosquash
+	rv = remote -v
+	st = status -s -u
+	who = shortlog -s --
+[user]
+	name = Eric Wendelin
+	email = emwendelin@gmail.com
+[core]
+	excludesfile = ~/.gitignore
+	whitespace = trailing-space,space-before-tab
+	editor = mate -w
+	quotepath = false
+	autocrlf = input
+	safecrlf = warn
+[color]
+	ui = auto
+[advice]
+	statusHints = false
+[diff]
+	renames = copies
+	mnemonicprefix = true
+[branch]
+	autosetupmerge = true
+[push]
+	default = tracking
+[merge]
+	stat = true
