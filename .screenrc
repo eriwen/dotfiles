@@ -5,8 +5,8 @@ bell "%c bell -> %n%f %t^G"
 defflow auto
 defscrollback 10000
 defutf8 on
-msgwait 2 		# 1 second messages
-startup_message off	# disable the startup splash message
+msgwait 2
+startup_message off
 shell -zsh
 vbell_msg "[[[ ding ]]]"
 vbell off

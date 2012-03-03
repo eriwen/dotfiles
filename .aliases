@@ -12,11 +12,13 @@ alias a='ant'
 alias c='cd'
 alias e='ps -ef | grep'
 alias f='find . \! -path "*.git*"'
+alias g='git'
 alias h='history'
 alias l='tree --dirsfirst -ChFupDaLg 1'
 alias p='pushd'
 alias o='popd'
 alias ql='qlmanage -p 2>/dev/null'
+alias vi='vim'
 
 # Git aliases
 alias ga='git add'
@@ -57,3 +59,8 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 # Mute and unmute
 alias mute="osascript -e 'set volume with output muted'"
 alias unmute="osascript -e 'set volume with output unmuted'"
+
+# Network utils
+alias network.ports='netstat -a -n | grep -i "LISTEN "'
+alias network.connections='lsof -l -i +L -R -V'
+alias network.established='lsof -l -i +L -R -V | grep ESTABLISHED'
