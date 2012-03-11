@@ -9,3 +9,8 @@ setopt SHARE_HISTORY
 setopt EXTENDED_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_FIND_NO_DUPS
+
+# startup virtualenv-burrito
+if [ -f $HOME/.venvburrito/startup.sh ]; then
+    . $HOME/.venvburrito/startup.sh
+fi
