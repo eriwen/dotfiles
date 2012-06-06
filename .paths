@@ -4,4 +4,5 @@ export GRADLE_HOME=/usr/local/share/gradle
 export GRAILS_HOME=/usr/local/share/grails
 export GRIFFON_HOME=/usr/local/share/griffon
 export NODE_PATH=/usr/local/lib/node_modules
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:.:${JAVA_HOME}/bin:${GRADLE_HOME}/bin:${JAVAFX_HOME}/bin:${GRIFFON_HOME}/bin:${GRIFFON_HOME}/ant/bin:${NODEJS_HOME}/bin:/home/eric/scripts
+export BEES_HOME=/usr/local/share/cloudbees
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:.:${HOME}/.dotfiles/.scripts:${JAVA_HOME}/bin:${GRADLE_HOME}/bin:${BEES_HOME}:${JAVAFX_HOME}/bin:${GRIFFON_HOME}/bin:${GRIFFON_HOME}/ant/bin:${NODEJS_HOME}/bin:/home/eric/scripts
