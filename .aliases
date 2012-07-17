@@ -21,6 +21,7 @@ alias ql='qlmanage -p 2>/dev/null'
 alias vi='vim'
 
 # Git aliases
+alias git='hub'
 alias ga='git add'
 alias gp='git push'
 alias gl='git log'
