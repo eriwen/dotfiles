@@ -15,7 +15,7 @@
 [core]
 	excludesfile = ~/.gitignore
 	whitespace = trailing-space,space-before-tab
-	editor = mate -w
+	editor = subl
 	quotepath = false
 	autocrlf = input
 	safecrlf = warn
@@ -32,3 +32,5 @@
 	default = tracking
 [merge]
 	stat = true
+[help]
+	autocorrect = 1
