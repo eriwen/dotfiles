@@ -48,9 +48,6 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 0
 
-# Make space switching animation faster
-defaults write com.apple.dock expose-animation-duration -float 0.15
-
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
@@ -58,9 +55,9 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
 # Disable disk image verification
-defaults write com.apple.frameworks.diskimages skip-verify -bool true
-defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
-defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
+# defaults write com.apple.frameworks.diskimages skip-verify -bool true
+# defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
+# defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
 # Automatically open a new Finder window when a volume is mounted
 defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
@@ -120,9 +117,6 @@ chflags nohidden ~/Library
 
 # Disable local Time Machine backups
 hash tmutil &> /dev/null && sudo tmutil disablelocal
-
-# Disable "Are you sure you want to open this application?" dialog
-defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Remove Dropbox’s green checkmark icons in Finder
 file=/Applications/Dropbox.app/Contents/Resources/check.icns
