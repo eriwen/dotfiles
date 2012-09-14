@@ -39,6 +39,9 @@ alias gcl='git clone'
 # Enhanced WHOIS lookups
 alias whois="whois -h whois-servers.net"
 
+# IP addresses
+alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
+
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache"
 
@@ -65,3 +68,9 @@ alias unmute="osascript -e 'set volume with output unmuted'"
 alias network.ports='netstat -a -n | grep -i "LISTEN "'
 alias network.connections='lsof -l -i +L -R -V'
 alias network.established='lsof -l -i +L -R -V | grep ESTABLISHED'
+
+autoload -U zmv
+# alias for zmv for no quotes
+# mmv *.c.orig orig/*.c
+alias mmv='noglob zmv -W'
+
