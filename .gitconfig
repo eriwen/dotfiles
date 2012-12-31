@@ -1,36 +1,60 @@
 [alias]
 	br = branch
-	c = commit
 	ci = commit
 	co = checkout
 	lg = log --pretty=oneline --abbrev-commit --graph --decorate --all
 	pur = pull --rebase
 	ri = rebase --interactive --autosquash
+	report = log --pretty=format:'%h %ai %cn \n - %s'
+	rh = reset --hard
 	rv = remote -v
 	st = status -s -u
+	sync = !git pull --rebase upstream master && git push -u origin +HEAD
+	unstage = reset HEAD --
 	who = shortlog -s --
 [user]
 	name = Eric Wendelin
 	email = emwendelin@gmail.com
 [core]
-	excludesfile = ~/.gitignore
-	whitespace = trailing-space,space-before-tab
-	editor = subl
-	quotepath = false
 	autocrlf = input
+	editor = vim -c ':normal gg'
+	excludesfile = ~/.gitignore
+	filemode = true
+	ignorecase = true
+	pager = less -R
+	quotepath = false
 	safecrlf = warn
+	whitespace = trailing-space,space-before-tab
 [color]
 	ui = auto
 [advice]
 	statusHints = false
-[diff]
-	renames = copies
-	mnemonicprefix = true
 [branch]
 	autosetupmerge = true
 [push]
-	default = tracking
+	default = current
+[rerere]
+	enabled = 1
 [merge]
 	stat = true
+	conflictstyle = diff3
+	tool = Kaleidoscope
+[mergetool]
+	keepTemporaries = false
+	keepBackup = false
+	prompt = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[diff]
+	mnemonicprefix = true
+	renames = copies
+	tool = Kaleidoscope
+[difftool]
+	prompt = false
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [help]
 	autocorrect = 1
+[github]
+	user = eriwen
