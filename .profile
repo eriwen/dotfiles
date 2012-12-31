@@ -1,6 +1,9 @@
 # Load RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+# Load pythonbrew
+[[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
+
 # RVM suggests using gcc instead of llvm (which Apple now symlinks gcc to)
 export CC=/usr/local/bin/gcc-4.2
 
