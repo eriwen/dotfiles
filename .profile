@@ -20,3 +20,6 @@ for f in $(command ls ~/.node-completion); do
   test -f "$f" && . "$f"
 done
 # }}}
+
+# Load gvm
+[[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source "$HOME/.gvm/bin/gvm-init.sh"
