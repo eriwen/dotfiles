@@ -20,6 +20,12 @@ alias o='popd'
 alias ql='qlmanage -p 2>/dev/null'
 alias vi='vim'
 
+# Bundler aliases
+alias b='bundle _1.0.10_'
+alias bi='bundle install'
+
+alias f7u12='sudo killall'
+
 # Git aliases
 alias git='hub'
 alias ga='git add'
@@ -35,6 +41,7 @@ alias gra='git remote add'
 alias grr='git remote rm'
 alias gpu='git pull'
 alias gcl='git clone'
+alias glh='git log --pretty=format:%H -1 | pbcopy && echo "`pbpaste` (copied to clipboard)"'
 
 # Search history
 alias hgrep='history | grep'
