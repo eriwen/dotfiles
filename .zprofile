@@ -1,6 +1,8 @@
 autoload -U compinit
 compinit
 
+compdef _git g=git
+
 autoload select-word-style
 select-word-style shell
 
@@ -34,4 +36,4 @@ then
 fi
 
 # Initialize z script
-. $HOME/.dotfiles/.scripts/z.sh
+. `brew --prefix`/etc/profile.d/z.sh
