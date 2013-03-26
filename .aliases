@@ -27,6 +27,9 @@ alias bi='bundle install'
 alias f7u12='sudo killall'
 
 # Git aliases
+groot()
+gst = "git status -sb"
+gsta()
 alias git='hub'
 alias ga='git add'
 alias gp='git push'
@@ -42,6 +45,21 @@ alias grr='git remote rm'
 alias gpu='git pull'
 alias gcl='git clone'
 alias glh='git log --pretty=format:%H -1 | pbcopy && echo "`pbpaste` (copied to clipboard)"'
+gsup()
+
+# Rails
+sc()
+ss()
+sg()
+sdb()
+scs = "sc --sandbox"
+sgc = "sg controller"
+sgm = "sg model"
+sgh = "sg helper"
+sgs = "sg scaffold"
+rdbd = "rake db:drop"
+rdbc = "rake db:create"
+rdbm = "rake db:migrate"
 
 # Search history
 alias hgrep='history | grep'
