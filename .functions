@@ -37,3 +37,191 @@ function server() {
 function precmd () {
    z --add "$(pwd -P)"
 }
+
+## Git Stuff
+
+# Git Root - Changes to project root directory (regardless of how deep the current path might currently be).
+function groot() {
+  cd "$(dirname $(git rev-parse --git-dir))"
+}
+
+# Git Status (all) - Answers the status of projects with uncommited changes.
+function gsta() {
+  echo ''
+  root_path=`pwd` # Remember root directory.
+
+  # Iterate project directories located in root directory.
+  for directory in `ls -d1 -- */`
+  do
+    # Process projects that are Git enabled only.
+    cd "$root_path/$directory"
+    if [ -d ".git" ]; then
+      # Capture current project status.
+      results=$(git status -s)
+      # Print project name and Git activity only if Git activity was detected.
+      if [ -n "$results" ]; then
+        echo -e "\033[36m${directory/%?/}\033[m" # Outputs in cyan color.
+        echo -e "$results"
+      fi
+    fi
+  done
+
+  cd "$root_path" # Return to root directory.
+  echo ''
+}
+
+# Git Standup - Answers a summarized list of Git activity since yesterday for all projects in current directory,
+# broken down by project. This is a great way to see what you did yesterday for today's standup report.
+function gsup() {
+  echo ''
+  root_path=`pwd` # Remember root directory.
+
+  # Iterate project directories located in root directory.
+  for directory in `ls -d1 -- */`
+  do
+    # Process projects that are Git enabled only.
+    cd "$root_path/$directory"
+    if [ -d ".git" ]; then
+      user=$(git config user.name)
+      # Capture git log activity.
+      results=$(git log --oneline --format='%C(yellow)%H%Creset %s' --author "$user" --since yesterday --reverse)
+      # Print project name and Git activity only if Git activity was detected.
+      if [ -n "$results" ]; then
+        echo -e "\033[36m${directory/%?/}" # Outputs in cyan color.
+        echo -e "$results\n"
+      fi
+    fi
+  done
+
+  cd "$root_path" # Return to root directory.
+}
+
+# Git Tail - Answers the commit history from the last tag (i.e. tail end of unversioned/untagged commits).
+function gtail() {
+  if [ "$(git tag)" ]; then
+    git log --oneline --format='%C(yellow)%H%Creset %s' --reverse $(git describe --abbrev=0 --tags)..HEAD
+  fi
+}
+
+# Git Tail (all) - Answers tail count (see gtail function for details) for all projects within current directory.
+function gtaila() {
+  echo ''
+  root_path=`pwd` # Remember root directory.
+
+  # Iterate project directories located in root directory.
+  for project in `ls -d1 -- */`
+  do
+    # Process projects that are Git enabled only.
+    cd "$root_path/$project"
+    if [ -d ".git" ]; then
+      # Count outstanding commits.
+      count=$(gtail | wc -l | xargs -n 1)
+      # Print project name and Git activity only if Git activity was detected.
+      if [ -n $count ] && [ $count != 0 ]; then
+        echo -e "\033[36m${project/%?/}:\033[m $count" # Outputs in cyan color.
+      fi
+    fi
+  done
+
+  cd "$root_path" # Return to root directory.
+  echo ''
+}
+
+# Git Projects (Commit and Push) - Commits and pushes changes for all projects within current directory. Useful
+# when making the same change across multiple projects.
+function gpcap() {
+  echo ''
+
+  if [ "$1" ]; then
+    root_path=`pwd` # Remember root directory.
+
+    # Iterate project directories located in root directory.
+    for project in `ls -d1 -- */`
+    do
+      # Only process projects that are Git-enabled.
+      cd "$root_path/$project"
+      if [ -d ".git" ]; then
+        # Only process projects that have changes.
+        if [ "$(git status -s)" ]; then
+          git commit -a -m "$1" && git push
+        fi
+      fi
+    done
+
+    cd "$root_path" # Return to root directory.
+  else
+    echo "ERROR: Commit message must be supplied."
+  fi
+
+  echo ''
+}
+
+# Git Branch Delete - Deletes local and associated remote branch (if found).
+function gbd() {
+  echo ''
+
+  if [ "$1" ]; then
+    read -p "You are about to delete the '$1' branch from local and remote repositories. Continue (y/n)?: " response
+    if [ "$response" == 'y' ]; then
+      git branch -d "$1"
+      if [ -n "$(git branch --remotes --list $1)" ]; then
+        git push origin :"$1"
+      else
+        echo "No remote branch found. Skipped." 
+      fi
+    else
+      echo "Branch deletion aborted."
+    fi
+  else
+    echo "ERROR: Branch name must be supplied."
+  fi
+
+  echo ''
+}
+
+# Git Branch Delete Merged - Deletes all local and associated remote branch (if found) merged branches.
+function gbdm() {
+  branches=$(git branch --merged | grep -v "\*" | xargs -n 1)
+  for branch in $branches
+  do
+    gbd $branch
+  done
+}
+
+## Rails stuff
+
+# Rails Script Console
+function sc {
+  if [ -e script/rails ]; then
+    script/rails console $@
+  else
+    script/console $@
+  fi
+}
+
+# Rails Script Server
+function ss {
+  if [ -e script/rails ]; then
+    script/rails server $@
+  else
+    script/server $@
+  fi
+}
+
+# Rails Script Generator
+function sg {
+  if [ -e script/rails ]; then
+    script/rails generate $@
+  else
+    script/generate $@
+  fi
+}
+
+# Rails Script Database Console
+function sdb {
+  if [ -e script/rails ]; then
+    script/rails dbconsole $@
+  else
+    script/dbconsole $@
+  fi
+}
