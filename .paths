@@ -1,13 +1,13 @@
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home
+#export JAVA_HOME=/Library/Java/Home
+export JAVA_HOME=$(/usr/libexec/java_home)
 export GRADLE_HOME=/usr/local/share/gradle
 export GRAILS_HOME=/usr/local/share/grails
 export GROOVY_HOME=/usr/local/share/groovy
 export GRIFFON_HOME=/usr/local/share/griffon
-export COFFEESCRIPT_HOME=${HOME}/src/CoffeeScriptRedux
 export NODE_PATH=/usr/local/lib/node_modules
 export NPM_HOME=/usr/local/share/npm
-export IDEA_HOME=/Applications/IntelliJ\ IDEA\ 11.app/Contents/MacOS
+export IDEA_HOME=/Applications/IntelliJ\ IDEA\ 12.app/Contents/MacOS
 export WEBSTORM_HOME=/Applications/WebStorm.app/Contents/MacOS
 export RUBYMINE_HOME=/Applications/RubyMine.app/Contents/MacOS
 export APPCODE_HOME=/Applications/AppCode.app/Contents/MacOS
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:.:${HOME}/.dotfiles/.scripts:${NPM_HOME}/bin:${JAVA_HOME}/bin:${GROOVY_HOME}/bin:${GRAILS_HOME}/bin:${GRADLE_HOME}/bin:${GRIFFON_HOME}/bin:${GRIFFON_HOME}/ant/bin:${COFFEESCRIPT_HOME}/bin:${NODEJS_PATH}/bin:/home/eric/scripts:${IDEA_HOME}:${WEBSTORM_HOME}:${RUBYMINE_HOME}:${APPCODE_HOME}
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:.:${HOME}/.dotfiles/.scripts:${NPM_HOME}/bin:${JAVA_HOME}/bin:${GROOVY_HOME}/bin:${GRAILS_HOME}/bin:${GRADLE_HOME}/bin:${GRIFFON_HOME}/bin:${GRIFFON_HOME}/ant/bin:${NODE_PATH}/bin
