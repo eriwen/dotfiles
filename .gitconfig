@@ -1,9 +1,9 @@
 [alias]
-    aa = add -A
+    aa = add --all
 	br = branch
 	ci = commit
 	co = checkout
-	lg = log --pretty=oneline --abbrev-commit --graph --decorate --all
+	lg = log --pretty=oneline --abbrev-commit --graph --decorate --all -10
 	pur = pull --rebase
 	ri = rebase --interactive --autosquash
 	report = log --pretty=format:'%h %ai %cn \n - %s'
@@ -33,7 +33,7 @@
 [branch]
 	autosetupmerge = true
 [push]
-	default = current
+	default = simple
 [rerere]
 	enabled = 1
 [merge]
@@ -59,3 +59,5 @@
 	autocorrect = 1
 [github]
 	user = eriwen
+[remote "origin"]
+	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
