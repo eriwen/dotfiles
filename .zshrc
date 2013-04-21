@@ -9,8 +9,9 @@ export ZSH_THEME="robbyrussell"
 export CASE_SENSITIVE="false"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(osx brew bundler gem git github heroku history-substring-search node npm python ruby rvm)
+plugins=(osx brew bundler cap gem git git-extras github heroku history-substring-search mvn node npm pip pow python ruby rails3 rvm)
 
 source $ZSH/oh-my-zsh.sh
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
