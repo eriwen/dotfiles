@@ -10,4 +10,4 @@ export IDEA_HOME=/Applications/IntelliJ\ IDEA\ 12.app/Contents/MacOS
 export WEBSTORM_HOME=/Applications/WebStorm.app/Contents/MacOS
 export RUBYMINE_HOME=/Applications/RubyMine.app/Contents/MacOS
 export APPCODE_HOME=/Applications/AppCode.app/Contents/MacOS
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:.:${HOME}/.dotfiles/.scripts:${NPM_HOME}/bin:${JAVA_HOME}/bin:${GROOVY_HOME}/bin:${GRAILS_HOME}/bin:${GRADLE_HOME}/bin:${GRIFFON_HOME}/bin:${GRIFFON_HOME}/ant/bin:${NODE_PATH}/bin
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:.:${HOME}/.dotfiles/.scripts:${NPM_HOME}/bin:${JAVA_HOME}/bin:${GROOVY_HOME}/bin:${GRAILS_HOME}/bin:${GRADLE_HOME}/bin:${GRIFFON_HOME}/bin:${GRIFFON_HOME}/ant/bin:${NODE_PATH}/bin
