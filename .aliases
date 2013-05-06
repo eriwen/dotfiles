@@ -8,58 +8,37 @@ alias ........='cd ../../../../../../..'
 alias .........='cd ../../../../../../../..'
 
 # Shortcuts
-alias a='ant'
 alias c='cd'
 alias e='ps -ef | grep'
 alias f='find . \! -path "*.git*"'
-alias g='git'
-alias h='history'
 alias l='tree --dirsfirst -ChFupDaLg 1'
-alias p='pushd'
-alias o='popd'
-alias ql='qlmanage -p 2>/dev/null'
 alias vi='vim'
 
-# Bundler aliases
-alias b='bundle _1.0.10_'
-alias bi='bundle install'
+# Nocorrects
+alias ack='nocorrect ack'
+alias vagrant='nocorrect vagrant'
 
 alias f7u12='sudo killall'
 
 # Git aliases
-groot()
-gst = "git status -sb"
-gsta()
-alias git='hub'
-alias ga='git add'
-alias gp='git push'
-alias gl='git log'
-alias gs='git status'
-alias gd='git diff'
-alias gm='git commit -m'
-alias gma='git commit -am'
-alias gb='git branch'
-alias gc='git checkout'
 alias gra='git remote add'
 alias grr='git remote rm'
-alias gpu='git pull'
 alias gcl='git clone'
 alias glh='git log --pretty=format:%H -1 | pbcopy && echo "`pbpaste` (copied to clipboard)"'
+alias gst="git status -sb"
 gsup()
+groot()
+gsta()
 
-# Rails
-sc()
-ss()
-sg()
-sdb()
-scs = "sc --sandbox"
-sgc = "sg controller"
-sgm = "sg model"
-sgh = "sg helper"
-sgs = "sg scaffold"
-rdbd = "rake db:drop"
-rdbc = "rake db:create"
-rdbm = "rake db:migrate"
+# Rake
+alias rdbd="rake db:drop"
+alias rdbc="rake db:create"
+alias rdbm="rake db:migrate"
+
+# Editors
+alias idea="open -b com.jetbrains.intellij ."
+alias rbmine="open -b com.jetbrains.rubymine ."
+alias webstorm="open -b com.jetbrains.webstorm ."
 
 # Search history
 alias hgrep='history | grep'
