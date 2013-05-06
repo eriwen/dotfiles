@@ -40,11 +40,6 @@ function precmd () {
 
 ## Git Stuff
 
-# Git Root - Changes to project root directory (regardless of how deep the current path might currently be).
-function groot() {
-  cd "$(dirname $(git rev-parse --git-dir))"
-}
-
 # Git Status (all) - Answers the status of projects with uncommited changes.
 function gsta() {
   echo ''
@@ -188,40 +183,3 @@ function gbdm() {
   done
 }
 
-## Rails stuff
-
-# Rails Script Console
-function sc {
-  if [ -e script/rails ]; then
-    script/rails console $@
-  else
-    script/console $@
-  fi
-}
-
-# Rails Script Server
-function ss {
-  if [ -e script/rails ]; then
-    script/rails server $@
-  else
-    script/server $@
-  fi
-}
-
-# Rails Script Generator
-function sg {
-  if [ -e script/rails ]; then
-    script/rails generate $@
-  else
-    script/generate $@
-  fi
-}
-
-# Rails Script Database Console
-function sdb {
-  if [ -e script/rails ]; then
-    script/rails dbconsole $@
-  else
-    script/dbconsole $@
-  fi
-}
