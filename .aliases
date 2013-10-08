@@ -13,6 +13,7 @@ alias e='ps -ef | grep'
 alias f='find . \! -path "*.git*"'
 alias l='tree --dirsfirst -ChFupDaLg 1'
 alias vi='vim'
+alias canary='open -a "Google Chrome Canary"'
 
 # Nocorrects
 alias ack='nocorrect ack'
