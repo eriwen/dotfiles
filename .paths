@@ -13,6 +13,6 @@ export IDEA_HOME=/Applications/IntelliJ\ IDEA\ 12.app/Contents/MacOS
 export WEBSTORM_HOME=/Applications/WebStorm.app/Contents/MacOS
 export RUBYMINE_HOME=/Applications/RubyMine.app/Contents/MacOS
 export APPCODE_HOME=/Applications/AppCode.app/Contents/MacOS
-export PEBBLE_HOME=/usr/local/pebble-dev/PebbleSDK-2.0.0
+export PEBBLE_HOME=/usr/local/pebble-dev/PebbleSDK-current
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:.:${HOME}/.dotfiles/.scripts:${NPM_HOME}/bin:${JAVA_HOME}/bin:${GROOVY_HOME}/bin:${GRAILS_HOME}/bin:${GRADLE_HOME}/bin:${NODE_PATH}/bin:${KAFKA_HOME}/bin:${CASSANDRA_HOME}/bin:${MYSQL_HOME}/bin:${PEBBLE_HOME}/bin
 export DYLD_LIBRARY_PATH=${MYSQL_HOME}/lib:$DYLD_LIBRARY_PATH
