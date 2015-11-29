@@ -15,7 +15,7 @@
 	who = shortlog -s --
 [user]
 	name = Eric Wendelin
-	email = emwendelin@gmail.com
+	email = me@eriwen.com
 [core]
 	autocrlf = input
 	editor = vim -c ':normal gg'
