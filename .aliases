@@ -11,6 +11,7 @@ alias .........='cd ../../../../../../../..'
 alias c='cd'
 alias e='ps -ef | grep'
 alias f='find . \! -path "*.git*"'
+alias gr='/usr/local/gradle/gradle-source-build/bin/gradle'
 alias l='tree --dirsfirst -ChFupDaLg 1'
 alias vi='vim'
 alias canary='open -a "Google Chrome Canary"'
@@ -22,19 +23,10 @@ alias vagrant='nocorrect vagrant'
 alias f7u12='sudo killall'
 
 # Git aliases
-alias gra='git remote add'
-alias grr='git remote rm'
-alias gcl='git clone'
 alias glh='git log --pretty=format:%H -1 | pbcopy && echo "`pbpaste` (copied to clipboard)"'
-alias gst="git status -sb"
 gsup()
 groot()
 gsta()
-
-# Rake
-alias rdbd="rake db:drop"
-alias rdbc="rake db:create"
-alias rdbm="rake db:migrate"
 
 # Editors
 alias idea="open -b com.jetbrains.intellij ."
